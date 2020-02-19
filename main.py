@@ -25,22 +25,14 @@ i = 0
 
 for container in containers:
     div_mid_containers = container.findAll("div", {"class": "card-section-mid"})
+    div_btm_containers = container.findAll("div", {"class": "card-section-btm"})
+
     i += 1
-    j = 0
     for div_mid_container in div_mid_containers:
-        print(div_mid_container)
+        a_tag = div_mid_container.find("a", {"class": "product-title js-product-url"})
+        print("\n Id : " + str(i) + " element text is: " + a_tag.text.strip())
 
-        a_tag =  div_mid_containers.a
-        print("\n\n ITERATION " + str(j) + "\n\n ")
+    for div_btm_container in div_btm_containers:
+        a_tag = div_btm_container.find("p", {"class": "product-new-price"})
+        print("\n Id : " + str(i) + " element price is: " + a_tag.text.strip())
 
-        print(div_mid_container)
-
-        print("\n\n ITERATION " + str(j) + "\n\n ")
-        j += 1
-        #     a_tag = div_mid_container.findAll("a", {"class": "product-title js-product-url"})
-        #     if len(a_tag) == 1:
-        #         print("At line i == " + str(i) + " the value is:  " + str(a_tag))
-        #     else:
-        #         raise ValueError('This a tag should be presented once only.')
-        # else:
-        #     raise ValueError('This div should be prezented once only.')
